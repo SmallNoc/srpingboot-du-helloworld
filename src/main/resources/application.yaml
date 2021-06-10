@@ -19,7 +19,7 @@ pets2: [cat,dog,pig]
 
 # 可把值注入到配置文件中
 person:
-  name: dyd
+  name: dyd@123.com
   age: 6
   happy: true
   birth: 1995/4/7
