@@ -6,6 +6,7 @@ import org.springframework.validation.annotation.Validated;
 
 
 import javax.validation.constraints.Email;
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
@@ -16,6 +17,7 @@ public class Person {
 
     @Email(message = "邮箱格式错误")//jsr303数据校验
     private String name;
+    @NotNull
     private Integer age;
     private boolean happy;
     private Date birth;
