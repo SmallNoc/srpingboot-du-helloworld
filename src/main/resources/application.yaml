@@ -1,0 +1,33 @@
+#对空格要求十分严格，尤其注意空格缩进
+server:
+  port: 8088
+
+#Ymal 可以写对象
+cat:
+  name: qiutian
+  age: 3
+#行内写法
+cat2: {name: qiutian,age: 3}
+
+#数组
+pets:
+  - cat
+  - dog
+  - pig
+
+pets2: [cat,dog,pig]
+
+# 可把值注入到配置文件中
+person:
+  name: dyd
+  age: 6
+  happy: true
+  birth: 1995/4/7
+  maps: {k1: v1,k2: v2}
+  lists:
+    - code
+    - music
+    - nagirl
+  dog:
+    name: 夏天
+    age:  1
