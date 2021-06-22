@@ -40,13 +40,13 @@ protected List<String> getCandidateConfigurations(AnnotationMetadata metadata, A
 
 META-INF/spring.factories 自动配置的核心文件
 
-![image-20210608145714831](C:\Users\HERO\Desktop\springBoot\图片\image-20210608145714831.png)
+![image-20210608145714831](SpringBoot笔记新.assets/image-20210608145714831.png)
 
-![image-20210608151800932](C:\Users\HERO\Desktop\springBoot\图片\image-20210608151800932.png)
+![image-20210608151800932](SpringBoot笔记新.assets/image-20210608151800932.png)
 
 ## 思维导图
 
-![image-20210608160458182](C:\Users\HERO\Desktop\springBoot\图片\image-20210608160458182.png)
+![image-20210608160458182](SpringBoot笔记新.assets/image-20210608160458182.png)
 
 ## 结论：
 
@@ -56,11 +56,11 @@ SpringBoot所有自动配置都是在启动时扫描并加载：
 
 只有为true时，才会导入对应的Start,对应的启动器才会启动，自动装配才会生效，才能配置成功。
 
-![image-20210608162033945](C:\Users\HERO\Desktop\springBoot\图片\image-20210608162033945.png)
+![image-20210608162033945](SpringBoot笔记新.assets/image-20210608162033945.png)
 
 ## Run方法
 
-<img src="C:\Users\HERO\Desktop\springBoot\图片\1112095-20181115161924186-928667393.png" alt="img"  />
+<img src="SpringBoot笔记新.assets/1112095-20181115161924186-928667393.png" alt="img"  />
 
 https://www.cnblogs.com/shamo89/p/8184960.html
 
@@ -115,7 +115,7 @@ person:
 
 ```
 
-![image-20210610155636490](C:\Users\HERO\Desktop\springBoot\图片\image-20210610155636490.png)
+![image-20210610155636490](SpringBoot笔记新.assets/image-20210610155636490.png)
 
 通过@ConfigurationProperties(prefix = "XXX")可以将Ymal中的对象的值映射到绑定的类中
 
@@ -129,9 +129,9 @@ person:
 
 ## jsr303注解
 
-![image-20210610180254354](C:\Users\HERO\Desktop\springBoot\图片\image-20210610180254354.png)
+![image-20210610180254354](SpringBoot笔记新.assets/image-20210610180254354.png)
 
-![image-20210610180528060](C:\Users\HERO\Desktop\springBoot\图片\image-20210610180528060.png)
+![image-20210610180528060](SpringBoot笔记新.assets/image-20210610180528060.png)
 
 ## yaml配置文件可以写再已下几个项目路径中
 
@@ -176,13 +176,13 @@ spring:
 
 ## 自动装配原理
 
-![image-20210615161836151](C:\Users\HERO\Desktop\springBoot\图片\image-20210615161836151.png![image-20210615161957583](C:\Users\HERO\Desktop\springBoot\图片\image-20210615161957583.png)
+![image-20210615161957583](SpringBoot笔记新.assets/image-20210615161957583.png)
 
 
 
 # SpringBoot web开发
 
-![image-20210615164820891](C:\Users\HERO\Desktop\springBoot\图片\image-20210615164820891.png)
+![image-20210615164820891](SpringBoot笔记新.assets/image-20210615164820891.png)
 
 ## 静态资源
 
@@ -208,11 +208,13 @@ public void addResourceHandlers(ResourceHandlerRegistry registry) {
         }
 ```
 
-![image-20210615172057888](C:\Users\HERO\Desktop\springBoot\图片\image-20210615172057888.png)
+![image-20210615172057888](SpringBoot笔记新.assets/image-20210615172057888.png)
 
 webjars方式导入静态资源基本不再使用
 
-![image-20210617162921872](C:\Users\HERO\Desktop\springBoot\图片\image-20210617162921872.png)
+![image-20210617162921872](SpringBoot笔记新.assets/image-20210617162921872.png)
+
+
 
 Springboot  静态资源的优先级是 resource  > satatic(默认) > public > /**
 
@@ -245,7 +247,7 @@ public class IndexController {
         </dependency>
 ```
 
-![image-20210617165546678](C:\Users\HERO\Desktop\springBoot\图片\image-20210617165546678.png)
+![image-20210617165546678](SpringBoot笔记新.assets/image-20210617165546678.png)
 
 导入对应的pom依赖，将html文件放入templates目录下通过Controller就可以访问到资源
 
@@ -268,14 +270,17 @@ html使用thymeleaf需要引入表头
 </html>
 ```
 
-![image-20210617172423118](C:\Users\HERO\Desktop\springBoot\图片\image-20210617172423118.png)
+![image-20210617165546678](SpringBoot笔记新.assets/image-20210617165546678.png)
+
+
 
 ## 扩展MVC  自定义组件 并且交给SpingBoot
 
 主要是实现webMvcConfigurer类 并通过@Bean注册，实现自动装配自己的组件
 
-![image-20210617180207376](C:\Users\HERO\Desktop\springBoot\图片\image-20210617180207376.png)
+![image-20210615161805333](SpringBoot笔记新.assets/image-20210615161805333.png)
 
-![image-20210617180611393](C:\Users\HERO\Desktop\springBoot\图片\image-20210617180611393.png)
+![image-20210615161836151](SpringBoot笔记新.assets/image-20210615161836151.png
 
-![image-20210617180711147](C:\Users\HERO\Desktop\springBoot\图片\image-20210617180711147.png)
+![image-20210617180711147](SpringBoot笔记新.assets/image-20210615161957583.png)
+
