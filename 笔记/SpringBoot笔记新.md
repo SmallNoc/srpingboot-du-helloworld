@@ -284,5 +284,4 @@ html使用thymeleaf需要引入表头
 
 ![image-20210617180711147](SpringBoot笔记新.assets/image-20210615161957583.png)
 
-1
 

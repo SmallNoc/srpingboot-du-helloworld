@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @RequestMapping("/hello")
 public class HelloController {
 
+
     @GetMapping("/myWorld")
     //ResponseBody 返回字符串
     @ResponseBody

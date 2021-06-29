@@ -32,6 +32,7 @@ public class MvcConfig implements WebMvcConfigurer {
 
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
+        //setViewName("test2");视图名称 即:页面名称
         registry.addViewController("/dyd").setViewName("index");
     }
 }

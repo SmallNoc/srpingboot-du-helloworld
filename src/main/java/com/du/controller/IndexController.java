@@ -17,4 +17,11 @@ public class IndexController {
         model.addAttribute("users", Arrays.asList("dyd","ydy","ddd"));
         return "index";
     }
+
+    @RequestMapping("/index2")
+    public String index2(Model model){
+        model.addAttribute("msg","hello spring boot");
+        model.addAttribute("users", Arrays.asList("dyd","ydy","ddd"));
+        return "test2";
+    }
 }
