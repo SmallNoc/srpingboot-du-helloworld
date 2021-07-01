@@ -284,4 +284,51 @@ html使用thymeleaf需要引入表头
 
 ![image-20210617180711147](SpringBoot笔记新.assets/image-20210615161957583.png)
 
+# SpringBoot项目学习代码
+
+## 代码学习详见工程
+
+### 首页配置
+
+1.注意点：所有页面的静态资源都需要使用thymeleaf接管 	@{}
+
+```html
+<!DOCTYPE html>
+<!-- 引用 xmlns:th="http://www.thymeleaf.org  -->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<title>Signin Template for Bootstrap</title>
+		<!-- 使用thymeleaf  th:href="@{/}" 接管静态资源  -->
+		<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+		<!-- Custom styles for this template -->
+		<link th:href="@{/css/signin.css}" rel="stylesheet">
+	</head>
+
+	<body class="text-center">
+		<form class="form-signin" action="dashboard.html">
+			<img class="mb-4" th:src="@{/img/bootstrap-solid.svg}" alt="" width="72" height="72">
+			<h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+			<label class="sr-only">Username</label>
+			<input type="text" class="form-control" placeholder="Username" required="" autofocus="">
+			<label class="sr-only">Password</label>
+			<input type="password" class="form-control" placeholder="Password" required="">
+			<div class="checkbox mb-3">
+				<label>
+          <input type="checkbox" value="remember-me"> Remember me
+        </label>
+			</div>
+			<button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+			<p class="mt-5 mb-3 text-muted">© 2017-2018</p>
+			<a class="btn btn-sm">中文</a>
+			<a class="btn btn-sm">English</a>
+		</form>
+
+	</body>
+```
+
+2.页面国际化
 

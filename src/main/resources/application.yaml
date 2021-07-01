@@ -1,6 +1,8 @@
 #对空格要求十分严格，尤其注意空格缩进
 server:
   port: 8080
+  servlet:
+    context-path: /du
 #选择启动模块
 spring:
   profiles:
@@ -13,14 +15,20 @@ server:
   port: 8081
 spring:
   profiles: dev
-
+  thymeleaf:
+    cache: false
+    messages:
+      basename: i18n.loing
 ---
 server:
   port: 8082
 spring:
   profiles: test
-
-
+  #关闭模板引擎缓存
+  thymeleaf:
+    cache: false
+  messages:
+    basename: i18n.loing
 #Ymal 可以写对象
 cat:
   name: qiutian
