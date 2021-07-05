@@ -2,6 +2,7 @@
 server:
   port: 8080
   servlet:
+    #web路径
     context-path: /du
 #选择启动模块
 spring:
@@ -18,7 +19,7 @@ spring:
   thymeleaf:
     cache: false
     messages:
-      basename: i18n.loing
+      basename: i18n.login
 ---
 server:
   port: 8082
@@ -28,7 +29,7 @@ spring:
   thymeleaf:
     cache: false
   messages:
-    basename: i18n.loing
+    basename: i18n.login
 #Ymal 可以写对象
 cat:
   name: qiutian
