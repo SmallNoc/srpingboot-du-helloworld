@@ -3,6 +3,7 @@ package com.du.config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.format.FormatterRegistry;
+import org.springframework.web.servlet.LocaleResolver;
 import org.springframework.web.servlet.View;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
@@ -34,6 +35,12 @@ public class MvcConfig implements WebMvcConfigurer {
     public void addViewControllers(ViewControllerRegistry registry) {
         //setViewName("test2");视图名称 即:页面名称
         registry.addViewController("/").setViewName("index");
+    }
+
+    @Bean
+    //自定义国际化
+    public LocaleResolver localeResolver(){
+       return new MyLocalResolver();
     }
 }
 

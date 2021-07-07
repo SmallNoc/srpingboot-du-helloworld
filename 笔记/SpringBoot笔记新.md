@@ -330,5 +330,58 @@ html使用thymeleaf需要引入表头
 	</body>
 ```
 
-2.页面国际化
+## 2.页面国际化
+
+首先需要配置中增加语言包配置  例如：i18n
+
+![image-20210707153046024](SpringBoot笔记新.assets/image-20210707153046024.png)
+
+通过login.properties增加配置内容，**login_en_US.properties**与**login_zh_CN.properties**进行相同的配置，但使用不同的语言作为value
+
+![image-20210707153343669](SpringBoot笔记新.assets/image-20210707153343669.png)
+
+随即在**application.yaml或application.properties**中进行**spring.messages.basename**配置
+
+![image-20210707153433520](SpringBoot笔记新.assets/image-20210707153433520.png)
+
+此时国际化的配置就算配置完成，使用时需要在页面 通过前端的引入对应配置的Key进行语言的转换 
+
+例如：#{login.tip}
+
+```html
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="description" content="">
+		<meta name="author" content="">
+		<title>Signin Template for Bootstrap</title>
+		<!-- Bootstrap core CSS -->
+		<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+		<!-- Custom styles for this template -->
+		<link th:href="@{/css/signin.css}" rel="stylesheet">
+	</head>
+
+	<body class="text-center">
+		<form class="form-signin" action="dashboard.html">
+			<img class="mb-4" th:src="@{/img/bootstrap-solid.svg}" alt="" width="72" height="72">
+			<h1 class="h3 mb-3 font-weight-normal" th:text="#{login.tip}">Please sign in</h1>
+			<input type="text" class="form-control" th:placeholder="#{login.username}" required="" autofocus="">
+			<input type="password" class="form-control" th:placeholder="#{login.password}" required="">
+			<div class="checkbox mb-3">
+				<label>
+          <input type="checkbox" value="remember-me" >[[#{login.remember}]]
+        </label>
+			</div>
+			<button class="btn btn-lg btn-primary btn-block" type="submit" >[[#{login.btn}]]</button>
+			<p class="mt-5 mb-3 text-muted">© 2017-2018</p>
+			<a class="btn btn-sm">中文</a>
+			<a class="btn btn-sm">English</a>
+		</form>
+
+	</body>
+
+</html>
+```
 
