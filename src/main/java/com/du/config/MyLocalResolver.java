@@ -16,12 +16,12 @@ public class MyLocalResolver implements LocaleResolver {
        String language =  httpServletRequest.getParameter("l");
        //获取默认
        Locale locale = Locale.getDefault();
-       //如果请求连接携带了国际化参数
-//       if(!StringUtils.hasLength(language)){
-//           System.out.println(language);
-//          String[] strings=  language.split("_");
-//           locale =  new Locale(strings[0],strings[1]);
-//       }
+//       如果请求连接携带了国际化参数
+       if(!StringUtils.isEmpty(language)){
+           System.out.println(language);
+          String[] strings=  language.split("_");
+           locale =  new Locale(strings[0],strings[1]);
+       }
         return locale;
     }
 

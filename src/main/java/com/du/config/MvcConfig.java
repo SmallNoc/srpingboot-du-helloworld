@@ -17,7 +17,6 @@ import java.util.Locale;
 public class MvcConfig implements WebMvcConfigurer {
 
     //ViewResolver 视图解析器  实现ViewResolver的类就可以叫做视图解析器
-    //通过@Bean注解中 当@Configuration
     @Bean
     public ViewResolver myViewResolver(){
         return new myViewResolver();
@@ -34,11 +33,12 @@ public class MvcConfig implements WebMvcConfigurer {
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
         //setViewName("test2");视图名称 即:页面名称
-        registry.addViewController("/").setViewName("index");
+        registry.addViewController("/du").setViewName("index");
+        registry.addViewController("/index.html").setViewName("index");
     }
 
-    @Bean
     //自定义国际化
+    @Bean
     public LocaleResolver localeResolver(){
        return new MyLocalResolver();
     }
