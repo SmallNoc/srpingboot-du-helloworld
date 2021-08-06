@@ -6,6 +6,7 @@ import org.springframework.format.FormatterRegistry;
 import org.springframework.web.servlet.LocaleResolver;
 import org.springframework.web.servlet.View;
 import org.springframework.web.servlet.ViewResolver;
+import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
@@ -17,6 +18,7 @@ import java.util.Locale;
 public class MvcConfig implements WebMvcConfigurer {
 
     //ViewResolver 视图解析器  实现ViewResolver的类就可以叫做视图解析器
+    //通过@Bean注解中 当@Configuration
     @Bean
     public ViewResolver myViewResolver(){
         return new myViewResolver();
@@ -33,14 +35,23 @@ public class MvcConfig implements WebMvcConfigurer {
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
         //setViewName("test2");视图名称 即:页面名称
-        registry.addViewController("/du").setViewName("index");
+        registry.addViewController("/").setViewName("index");
         registry.addViewController("/index.html").setViewName("index");
+        registry.addViewController("/main.html").setViewName("dashboard");
     }
 
     //自定义国际化
     @Bean
     public LocaleResolver localeResolver(){
        return new MyLocalResolver();
+    }
+
+
+    @Override
+    public void addInterceptors(InterceptorRegistry registry) {
+        //addPathPatterns("/**")拦截所有路径 .excludePathPatterns("/index.html","/")不进行拦截（排除）
+        registry.addInterceptor(new LoginHandlerInterceptor()).addPathPatterns("/**").excludePathPatterns("/index.html","/"
+        ,"/user/login","/css/*","/js/**","/img/**");
     }
 }
 
